@@ -60,37 +60,37 @@ const workTeam = [
     {
         name: 'Wayne Barnett',
         position: 'Founder & CEO',	
-        photo: '../img/wayne-barnett-founder-ceo.jpg'
+        photo: './assets/img/wayne-barnett-founder-ceo.jpg'
     },
 
     {
         name: 'Angela Caroll',	
         position: 'Chief Editor',	
-        photo: '../img/angela-caroll-chief-editor.jpg'
+        photo: './assets/img/angela-caroll-chief-editor.jpg'
     },
 
     {
         name: 'Walter Gordon',	
         position: 'Office Manager',	
-        photo: '../img/walter-gordon-office-manager.jpg'
+        photo: './assets/img/walter-gordon-office-manager.jpg'
     },
 
     {
         name: 'Angela Lopez',	
         position: 'Social Media Manager',	
-        photo: '../img/angela-lopez-social-media-manager.jpg' 
+        photo: './assets/img/angela-lopez-social-media-manager.jpg' 
     },
 
     {
         name: 'Scott Estrada',	
         position: 'Developer',	
-        photo: '../img/scott-estrada-developer.jpg' 
+        photo: './assets/img/scott-estrada-developer.jpg' 
     },
 
     {
         name: 'Barbara Ramos',	
         position: 'Graphic Designer',	
-        photo: '../img/barbara-ramos-graphic-designer.jpg' 
+        photo: './assets/img/barbara-ramos-graphic-designer.jpg' 
     },
 
 ];
@@ -117,9 +117,10 @@ for (const key in workTeam) {
     printEl.insertAdjacentHTML("beforeend", markup);
 }
 
+// Selezione elemento della DOM in cui voglio mettere le photo
 const photoEl = document.querySelector('.cardHead');
 
-
+// Ciclo for in per vedere le photo nella DOM
 for (const key in workTeam) {
     const keyPhoto = workTeam[key];
     const photoImg = document.createElement('img');
