@@ -54,7 +54,12 @@ barbara-ramos-graphic-designer.jpg */
 // Const markup
 // insertAdjacentHTML
 
-
+// Selezione elemento della DOM in cui vuoi stampare le informazioni
+const containerEl = document.querySelector('.container');
+// Selezione elemento della DOM in cui voglio mettere le photo
+const photoEl = document.querySelector('.cardHead');
+// Selezione elemento della DOM in cui voglio stampare name e position
+const textEl = document.querySelector('.cardBody');
 
 const workTeam = [
     {
@@ -101,8 +106,7 @@ for (const key in workTeam) {
     console.log(value);
     }
 
-// Selezione elemento della DOM in cui vuoi stampare le informazioni
-const printEl = document.querySelector('.printEl');
+ 
 
 // Ciclo for in per stampare tutti gli oggetti dell'array nella DOM
 for (const key in workTeam) {
@@ -112,18 +116,44 @@ for (const key in workTeam) {
     console.log(team.position);
     console.log(team.photo);
 
-    const markup = `<h3 class="printEl">${team.name + team.position + team.photo}</h3>`
-    console.log(markup);
-    printEl.insertAdjacentHTML("beforeend", markup);
-}
+    const markup = `<div class="container">
 
-// Selezione elemento della DOM in cui voglio mettere le photo
-const photoEl = document.querySelector('.cardHead');
+                        <div class="cardWayne">
+
+                            <div class="cardHead">
+                               <img src='${team.photo}'>
+                            </div>
+
+                            <div class="cardBody">
+                               <h3>${team.name}</h3>
+                               <p>${team.position}</p>
+                            </div>
+                            
+                        </div>`
+    console.log(markup);
+    containerEl.insertAdjacentHTML("beforeend", markup);
+}
+ 
+
 
 // Ciclo for in per vedere le photo nella DOM
 for (const key in workTeam) {
     const keyPhoto = workTeam[key];
     const photoImg = document.createElement('img');
     photoImg.src = keyPhoto.photo;
-    photoEl.appendChild(photoImg); 
+    photoEl.appendChild(photoImg);  
 }
+
+
+
+// Ciclo for in per vedere name e position nella DOM
+for (const key in workTeam) {
+    const keyText = workTeam[key];
+    const nameEl = document.createElement('h3');
+    nameEl.textContent = keyText.name;
+    const positionEl = document.createElement('p');
+    positionEl.textContent = keyText.position
+    textEl.appendChild(nameEl);
+    textEl.appendChild(positionEl);
+}
+
