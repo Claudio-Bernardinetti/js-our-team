@@ -100,13 +100,13 @@ const workTeam = [
 
 ];
 
-// Ciclo for in per stampare tutti gli oggetti dell'array nella console
+/* // Ciclo for in per stampare tutti gli oggetti dell'array nella console
 for (const key in workTeam) {
     const value = workTeam[key]
     console.log(value);
     }
 
- 
+  */
 
 // Ciclo for in per stampare tutti gli oggetti dell'array nella DOM
 for (const key in workTeam) {
@@ -116,10 +116,9 @@ for (const key in workTeam) {
     console.log(team.position);
     console.log(team.photo);
 
-    const markup = `<div class="container">
-
-                        <div class="cardWayne">
-
+    const markup = `
+                        <div class="card">
+                          
                             <div class="cardHead">
                                <img src='${team.photo}'>
                             </div>
@@ -128,15 +127,15 @@ for (const key in workTeam) {
                                <h3>${team.name}</h3>
                                <p>${team.position}</p>
                             </div>
-                            
-                        </div>`
+                        </div>
+                        `
     console.log(markup);
-    containerEl.insertAdjacentHTML("beforeend", markup);
+    containerEl.insertAdjacentHTML("beforebegin", markup);
 }
  
 
 
-// Ciclo for in per vedere le photo nella DOM
+/* // Ciclo for in per vedere le photo nella DOM
 for (const key in workTeam) {
     const keyPhoto = workTeam[key];
     const photoImg = document.createElement('img');
@@ -156,4 +155,4 @@ for (const key in workTeam) {
     textEl.appendChild(nameEl);
     textEl.appendChild(positionEl);
 }
-
+ */
