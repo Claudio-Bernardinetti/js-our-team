@@ -49,6 +49,10 @@ barbara-ramos-graphic-designer.jpg */
 // Const Objects array
 // Loop for / in 
 // Console.log()
+// Add HTML 
+// Create const domEl
+// Const markup
+// insertAdjacentHTML
 
 
 
@@ -91,7 +95,23 @@ const workTeam = [
 
 ];
 
+// Ciclo for in per stampare tutti gli oggetti dell'array
 for (const key in workTeam) {
     const value = workTeam[key]
     console.log(value);
     }
+
+// Selezione elemento della DOM in cui vuoi stampare le informazioni
+const printEl = document.querySelector('.printEl');
+
+for (const key in workTeam) {
+    const team = workTeam[key];
+
+    console.log(team.name);
+    console.log(team.position);
+    console.log(team.photo);
+
+    const markup = `<h3 class="printEl">${team.name + team.position + team.photo}</h3>`
+    console.log(markup);
+    printEl.insertAdjacentHTML("beforeend", markup);
+}
