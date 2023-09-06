@@ -60,42 +60,42 @@ const workTeam = [
     {
         name: 'Wayne Barnett',
         position: 'Founder & CEO',	
-        photo: 'src./assets/img/wayne-barnett-founder-ceo.jpg'
+        photo: '../img/wayne-barnett-founder-ceo.jpg'
     },
 
     {
         name: 'Angela Caroll',	
         position: 'Chief Editor',	
-        photo: './assets/img/angela-caroll-chief-editor.jpg'
+        photo: '../img/angela-caroll-chief-editor.jpg'
     },
 
     {
         name: 'Walter Gordon',	
         position: 'Office Manager',	
-        photo: './assets/img/walter-gordon-office-manager.jpg'
+        photo: '../img/walter-gordon-office-manager.jpg'
     },
 
     {
         name: 'Angela Lopez',	
         position: 'Social Media Manager',	
-        photo: './assets/img/angela-lopez-social-media-manager.jpg' 
+        photo: '../img/angela-lopez-social-media-manager.jpg' 
     },
 
     {
         name: 'Scott Estrada',	
         position: 'Developer',	
-        photo: './assets/img/scott-estrada-developer.jpg' 
+        photo: '../img/scott-estrada-developer.jpg' 
     },
 
     {
         name: 'Barbara Ramos',	
         position: 'Graphic Designer',	
-        photo: './assets/img/barbara-ramos-graphic-designer.jpg' 
+        photo: '../img/barbara-ramos-graphic-designer.jpg' 
     },
 
 ];
 
-// Ciclo for in per stampare tutti gli oggetti dell'array
+// Ciclo for in per stampare tutti gli oggetti dell'array nella console
 for (const key in workTeam) {
     const value = workTeam[key]
     console.log(value);
@@ -104,6 +104,7 @@ for (const key in workTeam) {
 // Selezione elemento della DOM in cui vuoi stampare le informazioni
 const printEl = document.querySelector('.printEl');
 
+// Ciclo for in per stampare tutti gli oggetti dell'array nella DOM
 for (const key in workTeam) {
     const team = workTeam[key];
 
@@ -114,4 +115,14 @@ for (const key in workTeam) {
     const markup = `<h3 class="printEl">${team.name + team.position + team.photo}</h3>`
     console.log(markup);
     printEl.insertAdjacentHTML("beforeend", markup);
+}
+
+const photoEl = document.querySelector('.cardHead');
+
+
+for (const key in workTeam) {
+    const keyPhoto = workTeam[key];
+    const photoImg = document.createElement('img');
+    photoImg.src = keyPhoto.photo;
+    photoEl.appendChild(photoImg); 
 }
