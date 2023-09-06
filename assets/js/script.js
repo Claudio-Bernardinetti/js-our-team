@@ -45,4 +45,53 @@ Barbara Ramos
 Graphic Designer	
 barbara-ramos-graphic-designer.jpg */
 
-console.log('ciao');
+// Tools:
+// Const Objects array
+// Loop for / in 
+// Console.log()
+
+
+
+const workTeam = [
+    {
+        name: 'Wayne Barnett',
+        position: 'Founder & CEO',	
+        photo: 'src./assets/img/wayne-barnett-founder-ceo.jpg'
+    },
+
+    {
+        name: 'Angela Caroll',	
+        position: 'Chief Editor',	
+        photo: './assets/img/angela-caroll-chief-editor.jpg'
+    },
+
+    {
+        name: 'Walter Gordon',	
+        position: 'Office Manager',	
+        photo: './assets/img/walter-gordon-office-manager.jpg'
+    },
+
+    {
+        name: 'Angela Lopez',	
+        position: 'Social Media Manager',	
+        photo: './assets/img/angela-lopez-social-media-manager.jpg' 
+    },
+
+    {
+        name: 'Scott Estrada',	
+        position: 'Developer',	
+        photo: './assets/img/scott-estrada-developer.jpg' 
+    },
+
+    {
+        name: 'Barbara Ramos',	
+        position: 'Graphic Designer',	
+        photo: './assets/img/barbara-ramos-graphic-designer.jpg' 
+    },
+
+];
+
+for (const key in workTeam) {
+    const value = workTeam[key]
+    console.log(value);
+    }
